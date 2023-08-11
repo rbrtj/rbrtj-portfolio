@@ -10,9 +10,9 @@ const Header = () => {
     <div className="bg-activityBar border border-activityBarBorder flex justify-between items-center h-12 py-2 px-4">
       <div className="flex items-center gap-2">
         {/* Color Indicators */}
-        <span className="h-[13px] w-[13px] rounded-lg cursor-pointer bg-red-500"></span>
-        <span className="h-[13px] w-[13px] rounded-lg cursor-pointer bg-yellow-500"></span>
-        <span className="h-[13px] w-[13px] rounded-lg cursor-pointer bg-green-500"></span>
+        <span className="h-3 w-3 rounded-lg cursor-pointer bg-red-500"></span>
+        <span className="h-3 w-3 rounded-lg cursor-pointer bg-yellow-500"></span>
+        <span className="h-3 w-3 rounded-lg cursor-pointer bg-green-500"></span>
       </div>
       {/* Search Bar */}
       <div className="text-center py-1 px-24 text-activityBarSearchText border border-activityBarSearchBorder rounded-lg bg-activityBarSearchBackground">
