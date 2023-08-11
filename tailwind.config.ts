@@ -23,6 +23,7 @@ const config: Config = {
         activityBarSearchBorder: "#262e3e",
         activityBarSearchText: "#4a5670",
         sidebarBackground: "#171d27",
+        icon: "#343d50",
       },
     },
   },

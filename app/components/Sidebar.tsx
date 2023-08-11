@@ -39,7 +39,7 @@ const sidebarBottomItems = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="flex flex-col justify-between w-[4.5vw] min-w-[40px] h-[calc(100vh-30px-25px)] bg-sidebarBackground">
+    <aside className="flex flex-col justify-between w-[4.5vw] min-w-[40px] h-[calc(100vh-2rem-3rem)] bg-sidebarBackground">
       <div className="">
         {sidebarItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
@@ -48,7 +48,7 @@ export const Sidebar = () => {
                 pathname === path && "border-l-2 border-solid bg-background"
               }`}
             >
-              <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-slate-600" />
+              <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-icon" />
             </div>
           </Link>
         ))}
@@ -57,7 +57,7 @@ export const Sidebar = () => {
         {sidebarBottomItems.map(({ Icon, path }) => (
           <div key={path} className="cursor-pointer w-full">
             <Link href={path} key={path}>
-              <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-slate-600" />
+              <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-icon" />
             </Link>
           </div>
         ))}
