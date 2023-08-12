@@ -6,6 +6,7 @@ import Titlebar from "./components/Titlebar";
 import Header from "./components/Header";
 import Explorer from "./components/Explorer";
 import TabBar from "./components/TabBar";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             </main>
           </div>
         </div>
+        <Footer />
       </body>
     </html>
   );
