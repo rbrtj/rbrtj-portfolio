@@ -1,31 +1,10 @@
 "use client";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-const explorerItems = [
-  {
-    name: "home.jsx",
-    path: "/",
-    icon: "react_icon.svg",
-  },
-  {
-    name: "about.html",
-    path: "/about",
-    icon: "html_icon.svg",
-  },
-  {
-    name: "contact.css",
-    path: "/contact",
-    icon: "css_icon.svg",
-  },
-  {
-    name: "github.md",
-    path: "/github",
-    icon: "markdown_icon.svg",
-  },
-];
+import { fileItems } from "../constants";
 
 const Explorer = () => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -43,7 +22,7 @@ const Explorer = () => {
         rbrtj-portfolio
       </button>
       <div className="py-2 cursor-pointer">
-        {explorerItems.map((item, index) => (
+        {fileItems.map((item, index) => (
           <Link href={item.path} key={index}>
             <div
               className={`py-1 px-4 flex items-center text-sm ${

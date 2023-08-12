@@ -5,6 +5,7 @@ import { Sidebar } from "./components/Sidebar";
 import Titlebar from "./components/Titlebar";
 import Header from "./components/Header";
 import Explorer from "./components/Explorer";
+import TabBar from "./components/TabBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Sidebar />
           <Explorer />
           <div className="w-full">
+            <TabBar />
             <main
               id="main-editor"
               className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
