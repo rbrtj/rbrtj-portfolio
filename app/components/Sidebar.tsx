@@ -1,12 +1,5 @@
 "use client";
-import {
-  Braces,
-  Code,
-  Files,
-  Github,
-  Settings,
-  UserCircle2,
-} from "lucide-react";
+import { Braces, Files, Github, Settings, UserCircle2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

@@ -31,7 +31,8 @@
   --header-text: rgb(74, 83, 105);
   --header-searchbox-bg: rgb(30, 36, 50);
   --explorer-bg: rgb(25, 31, 43);
-  --explorer-hover-bg: rgb(34, 41, 57);
+  --explorer-active-bg: rgb(34, 41, 57);
+  --explorer-hover-bg: rgb(30, 37, 50);
   --explorer-border: rgb(18, 22, 30);
   --tab-bg: rgb(25, 31, 43);
   --tab-active-bg: rgb(30, 36, 50);

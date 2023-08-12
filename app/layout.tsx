@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "./components/Sidebar";
 import Titlebar from "./components/Titlebar";
 import Header from "./components/Header";
+import Explorer from "./components/Explorer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,19 +20,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="theme-bearded-arc">
-      <Titlebar />
-      <Header />
-      <div className="flex">
-        <Sidebar />
-        <div className="w-full">
-          <main
-            id="main-editor"
-            className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
-          >
-            <div className="w-3/4 p-4">{children}</div>
-          </main>
+      <body>
+        <Titlebar />
+        <Header />
+        <div className="flex">
+          <Sidebar />
+          <Explorer />
+          <div className="w-full">
+            <main
+              id="main-editor"
+              className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
+            >
+              <div className="w-3/4 p-4">{children}</div>
+            </main>
+          </div>
         </div>
-      </div>
+      </body>
     </html>
   );
 }

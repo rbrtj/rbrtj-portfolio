@@ -28,6 +28,7 @@ const config: Config = {
         headerText: "var(--header-text)",
         headerSearchboxBg: "var(--header-searchbox-bg)",
         explorerBg: "var(--explorer-bg)",
+        explorerActiveBg: "var(--explorer-active-bg)",
         explorerHoverBg: "var(--explorer-hover-bg)",
         explorerBorder: "var(--explorer-border)",
         tabBg: "var(--tab-bg)",
