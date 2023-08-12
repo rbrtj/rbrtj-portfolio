@@ -21,25 +21,27 @@ const Explorer = () => {
         {isExpanded ? <ChevronDown /> : <ChevronUp />}
         rbrtj-portfolio
       </button>
-      <div className="py-2 cursor-pointer">
-        {fileItems.map((item, index) => (
-          <Link href={item.path} key={index}>
-            <div
-              className={`py-1 px-4 flex items-center text-sm ${
-                pathname === item.path && "bg-explorerActiveBg"
-              } hover:bg-explorerHoverBg`}
-            >
-              <Image
-                src={`/${item.icon}`}
-                alt={item.name}
-                height={18}
-                width={18}
-              />
-              <p className="ml-2">{item.name}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {isExpanded ? (
+        <div className="py-2 cursor-pointer">
+          {fileItems.map((item, index) => (
+            <Link href={item.path} key={index}>
+              <div
+                className={`py-1 px-4 flex items-center text-sm ${
+                  pathname === item.path && "bg-explorerActiveBg"
+                } hover:bg-explorerHoverBg`}
+              >
+                <Image
+                  src={`/${item.icon}`}
+                  alt={item.name}
+                  height={18}
+                  width={18}
+                />
+                <p className="ml-2">{item.name}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };
