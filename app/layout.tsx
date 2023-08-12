@@ -18,15 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="theme-bearded-arc">
       <Titlebar />
       <Header />
-      <div className="bg-background flex">
+      <div className="flex">
         <Sidebar />
         <div className="w-full">
           <main
             id="main-editor"
-            className="p-8 bg-vscode-text flex-1 h-[85vh] overflow-y-auto scroll-smooth"
+            className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
           >
             <div className="w-3/4 p-4">{children}</div>
           </main>

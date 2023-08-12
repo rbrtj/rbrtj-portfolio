@@ -7,7 +7,7 @@ import {
 
 const Header = () => {
   return (
-    <div className="bg-activityBar border border-activityBarBorder flex justify-between items-center h-12 py-2 px-4">
+    <div className="bg-headerBg border border-headerBorder text-headerText flex justify-between items-center h-12 py-2 px-4">
       <div className="flex items-center gap-2">
         {/* Color Indicators */}
         <span className="h-3 w-3 rounded-lg cursor-pointer bg-red-500"></span>
@@ -15,7 +15,7 @@ const Header = () => {
         <span className="h-3 w-3 rounded-lg cursor-pointer bg-green-500"></span>
       </div>
       {/* Search Bar */}
-      <div className="text-center py-1 px-24 text-activityBarSearchText border border-activityBarSearchBorder rounded-lg bg-activityBarSearchBackground">
+      <div className="text-center py-1 px-24 text-activityBarSearchText border border-headerBorder rounded-lg bg-headerSearchboxBg">
         <div className="flex gap-2 items-center">
           <Search className="w-4 h-4" />
           <span>Robert Jaszczurek</span>

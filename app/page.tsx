@@ -16,7 +16,7 @@ const portfolioItems = [
 export default function Home() {
   return (
     <>
-      <div className="flex "></div>
+      <div className="flex"></div>
       <div>
         <h1 className="text-2xl font-semibold mb-4">Portfolio</h1>
         {portfolioItems.map((item, index) => (
