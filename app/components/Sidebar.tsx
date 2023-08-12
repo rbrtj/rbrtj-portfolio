@@ -1,57 +1,62 @@
 "use client";
 import { Braces, Files, Github, Settings, UserCircle2 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { createContext, useContext } from "react";
+import { ExplorerToggleContext } from "../context/explorer-toggle-context";
 
 const sidebarItems = [
   {
     Icon: Files,
-    path: "/about",
+    title: "Files",
   },
   {
     Icon: Github,
-    path: "/github",
+    title: "Github",
   },
   {
     Icon: Braces,
-    path: "/projects",
+    title: "Braces",
   },
 ];
 
 const sidebarBottomItems = [
   {
     Icon: UserCircle2,
-    path: "/about",
+    title: "User",
   },
   {
     Icon: Settings,
-    path: "/settings",
+    title: "Settings",
   },
 ];
 
 export const Sidebar = () => {
-  const pathname = usePathname();
+  const { state, dispatch } = useContext(ExplorerToggleContext);
+  const handleToggle = (title: string) => {
+    if (title !== "Files") return;
+    dispatch({ type: "toggle" });
+  };
   return (
-    <aside className="flex flex-col justify-between w-[4.5vw] min-w-[40px] h-[calc(100vh-7rem)] bg-sidebarBg border-r border-solid border-sidebarBorder">
+    <aside className="flex flex-col justify-between w-[4.5vw] h-[calc(100vh-7rem)] bg-sidebarBg border-r border-solid border-sidebarBorder">
       <div>
-        {sidebarItems.map(({ Icon, path }) => (
-          <Link href={path} key={path}>
-            <div
-              className={`hover:bg-sidebarHoverBg ${
-                pathname === path && "border-l-2 border-solid border-accentText"
-              }`}
-            >
-              <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-accentText" />
-            </div>
-          </Link>
+        {sidebarItems.map(({ Icon, title }, index) => (
+          <button
+            key={index}
+            onClick={() => handleToggle(title)}
+            className={`${
+              !state.isHidden && title === "Files" && "bg-sidebarHoverBg"
+            } hover:bg-sidebarHoverBg`}
+          >
+            <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-accentText" />
+          </button>
         ))}
       </div>
       <div className="">
-        {sidebarBottomItems.map(({ Icon, path }) => (
-          <div key={path} className="cursor-pointer w-full">
-            <Link href={path} key={path}>
+        {sidebarBottomItems.map(({ Icon }, index) => (
+          <div key={index} className="cursor-pointer w-full">
+            <button>
               <Icon className="h-[48px] w-[48px] py-3 px-0 block my-0 mx-auto text-accentText" />
-            </Link>
+            </button>
           </div>
         ))}
       </div>

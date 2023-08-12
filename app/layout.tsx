@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Explorer from "./components/Explorer";
 import TabBar from "./components/TabBar";
 import Footer from "./components/Footer";
+import { ExplorerToggleProvider } from "./context/explorer-toggle-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,22 +24,24 @@ export default function RootLayout({
   return (
     <html lang="en" className="theme-bearded-arc">
       <body>
-        <Titlebar />
-        <Header />
-        <div className="flex">
-          <Sidebar />
-          <Explorer />
-          <div className="w-full">
-            <TabBar />
-            <main
-              id="main-editor"
-              className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
-            >
-              <div className="w-3/4 p-4">{children}</div>
-            </main>
+        <ExplorerToggleProvider>
+          <Titlebar />
+          <Header />
+          <div className="flex">
+            <Sidebar />
+            <Explorer />
+            <div className="w-full">
+              <TabBar />
+              <main
+                id="main-editor"
+                className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
+              >
+                <div className="w-3/4 p-4">{children}</div>
+              </main>
+            </div>
           </div>
-        </div>
-        <Footer />
+          <Footer />
+        </ExplorerToggleProvider>
       </body>
     </html>
   );
