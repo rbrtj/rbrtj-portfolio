@@ -1,10 +1,4 @@
-import {
-  AlertTriangle,
-  GitBranch,
-  Info,
-  RefreshCw,
-  XCircle,
-} from "lucide-react";
+import { AlertTriangle, GitBranch, Info, XCircle } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
