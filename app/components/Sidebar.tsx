@@ -32,8 +32,8 @@ const sidebarBottomItems = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="flex flex-col justify-between w-[4.5vw] min-w-[40px] h-[calc(100vh-7rem)] bg-sidebarBg">
-      <div className="">
+    <aside className="flex flex-col justify-between w-[4.5vw] min-w-[40px] h-[calc(100vh-7rem)] bg-sidebarBg border-r border-solid border-sidebarBorder">
+      <div>
         {sidebarItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
             <div

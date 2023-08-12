@@ -22,6 +22,7 @@ const config: Config = {
         titlebarHoverBg: "var(--titlebar-hover-bg)",
         sidebarBg: "var(--sidebar-bg)",
         sidebarHoverBg: "var(--sidebar-hover-bg)",
+        sidebarBorder: "var(--header-border)",
         headerBg: "var(--header-bg)",
         headerHoverBg: "var(--header-hover-bg)",
         headerBorder: "var(--header-border)",
