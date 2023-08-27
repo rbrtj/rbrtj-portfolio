@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+
 import Sidebar from './components/Sidebar';
 import Titlebar from './components/Titlebar';
 import Header from './components/Header';
@@ -29,13 +30,13 @@ export default function RootLayout({
           <div className="flex">
             <Sidebar />
             <Explorer />
-            <div className="w-full">
+            <div className="w-full flex flex-col">
               <TabBar />
               <main
                 id="main-editor"
-                className="p-8 flex-1 h-[85vh] overflow-y-auto scroll-smooth bg-mainBg text-bgText"
+                className="p-8 flex-1 overflow-y-auto scroll-smooth bg-mainBg text-bgText"
               >
-                <div className="w-3/4 p-4">{children}</div>
+                <div className="flex-1 p-4">{children}</div>
               </main>
             </div>
           </div>
