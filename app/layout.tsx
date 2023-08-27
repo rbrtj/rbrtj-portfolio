@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 
+import { Source_Code_Pro } from 'next/font/google';
 import Sidebar from './components/Sidebar';
 import Titlebar from './components/Titlebar';
 import Header from './components/Header';
@@ -9,7 +10,7 @@ import TabBar from './components/TabBar';
 import Footer from './components/Footer';
 import { ExplorerToggleProvider } from './context/explorer-toggle-context';
 
-// const inter = Inter({ subsets: ['latin'] });
+const sourceCode = Source_Code_Pro({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -34,7 +35,7 @@ export default function RootLayout({
               <TabBar />
               <main
                 id="main-editor"
-                className="p-8 flex-1 overflow-y-auto scroll-smooth bg-mainBg text-bgText"
+                className={`p-8 flex-1 overflow-y-auto scroll-smooth bg-mainBg text-bgText ${sourceCode.className}`}
               >
                 <div className="flex-1 p-4">{children}</div>
               </main>
