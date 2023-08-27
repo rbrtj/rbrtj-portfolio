@@ -1,7 +1,9 @@
-import { AlertTriangle, GitBranch, Info, XCircle } from "lucide-react";
-import Link from "next/link";
+import {
+  AlertTriangle, GitBranch, Info, XCircle,
+} from 'lucide-react';
+import Link from 'next/link';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="bg-bottombarBg h-8 border-t border-solid border-bottombarBorder text-accentText px-2 flex items-center justify-between text-sm">
       <div className="flex items-center">
@@ -23,6 +25,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

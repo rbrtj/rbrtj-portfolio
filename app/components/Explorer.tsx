@@ -1,13 +1,14 @@
-"use client";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import Link from "next/link";
-import { useContext, useState } from "react";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { fileItems } from "../constants";
-import { ExplorerToggleContext } from "../context/explorer-toggle-context";
+'use client';
 
-const Explorer = () => {
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
+import { useContext, useState } from 'react';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import fileItems from '../constants';
+import { ExplorerToggleContext } from '../context/explorer-toggle-context';
+
+function Explorer() {
   const [isExpanded, setIsExpanded] = useState(true);
   const {
     state: { isHidden: isExplorerHidden },
@@ -15,6 +16,7 @@ const Explorer = () => {
 
   const pathname = usePathname();
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {isExplorerHidden ? null : (
         <div className="bg-explorerBg w-64 text-accentText border-r border-explorerBorder border-solid">
@@ -22,6 +24,7 @@ const Explorer = () => {
             EXPLORER
           </p>
           <button
+            type="button"
             className="bg-transparent flex font-bold w-full text-left px-3"
             onClick={() => setIsExpanded(!isExpanded)}
           >
@@ -30,11 +33,11 @@ const Explorer = () => {
           </button>
           {isExpanded ? (
             <div className="py-2 cursor-pointer">
-              {fileItems.map((item, index) => (
-                <Link href={item.path} key={index}>
+              {fileItems.map((item) => (
+                <Link href={item.path} key={item.name}>
                   <div
                     className={`py-1 px-4 flex items-center text-sm ${
-                      pathname === item.path && "bg-explorerActiveBg"
+                      pathname === item.path && 'bg-explorerActiveBg'
                     } hover:bg-explorerHoverBg`}
                   >
                     <Image
@@ -53,6 +56,6 @@ const Explorer = () => {
       )}
     </>
   );
-};
+}
 
 export default Explorer;

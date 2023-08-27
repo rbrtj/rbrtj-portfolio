@@ -1,6 +1,8 @@
-"use client";
+'use client';
 
-import { type Dispatch, createContext, useReducer } from "react";
+import {
+  type Dispatch, createContext, useReducer, useMemo,
+} from 'react';
 
 type StateType = {
   isHidden: boolean;
@@ -15,7 +17,7 @@ const initialState: StateType = {
 
 const reducer = (state: StateType, action: ActionType) => {
   switch (action.type) {
-    case "toggle":
+    case 'toggle':
       return { ...state, isHidden: !state.isHidden };
     default:
       return state;
@@ -27,15 +29,16 @@ export const ExplorerToggleContext = createContext<{
   dispatch: Dispatch<ActionType>;
 }>({ state: initialState, dispatch: () => null });
 
-export const ExplorerToggleProvider = ({
+export function ExplorerToggleProvider({
   children,
 }: {
   children: React.ReactNode;
-}) => {
+}) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
   return (
-    <ExplorerToggleContext.Provider value={{ state, dispatch }}>
+    <ExplorerToggleContext.Provider value={contextValue}>
       {children}
     </ExplorerToggleContext.Provider>
   );
-};
+}
